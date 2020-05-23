@@ -1,0 +1,9 @@
+.container {
+  margin: auto;
+  max-width: 1000px;
+  display: flex;
+  grid-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
