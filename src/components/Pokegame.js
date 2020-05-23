@@ -106,18 +106,24 @@ function Pokegame() {
     let groupTwo = newSort.slice(4)
     setgroupOneExp(handleTotalExperienceEachGroup(groupOne))
     setgroupTwoExp(handleTotalExperienceEachGroup(groupTwo))
-    setfirstGroup([...groupOne])
-    setsecondGroup([...groupTwo])
+    setfirstGroup(groupOne)
+    setsecondGroup(groupTwo)
   }
 
   return (
     <div>
-      <button onClick={arrangePokemon}>Pokemon Battle</button>
-      <h2>Pokemon Group One</h2>
-      <h3>{groupOneExp > groupTwoExp && "Winner"}</h3>
+      <div className="center-items-top">
+        <button onClick={arrangePokemon}>Pokemon Battle</button>
+        <h2>Pokemon Group One</h2>
+        <h3>Total Experience: {groupOneExp}</h3>
+        <h3 className="winner">{groupOneExp > groupTwoExp && "Winner"}</h3>
+      </div>
       <Pokedex data={firstGroup} />
-      <h2>Pokemon Group Two</h2>
-      <h3>{groupTwoExp > groupOneExp && "Winner"}</h3>
+      <div className="center-items-bottom">
+        <h2>Pokemon Group Two</h2>
+        <h3>Total Experience: {groupTwoExp}</h3>
+        <h3 className="winner">{groupTwoExp > groupOneExp && "Winner"}</h3>
+      </div>
       <Pokedex data={secondGroup} />
     </div>
   )
